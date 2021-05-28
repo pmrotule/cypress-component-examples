@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>{{ colorOfFruits.apple }}</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -104,11 +105,17 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { getColorOfFruits } from "@/helpers/fruit";
 
 export default Vue.extend({
   name: "HelloWorld",
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      colorOfFruits: getColorOfFruits(),
+    };
   },
 });
 </script>
